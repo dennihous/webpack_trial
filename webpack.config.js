@@ -20,17 +20,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localsConvention: 'camelCase',
-              sourceMap: true
-            }
-          }
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       }
     ]
@@ -45,6 +37,7 @@ module.exports = {
     host: 'localhost',
     port: port,
     historyApiFallback: true,
-    open: true
+    open: true,
+    watchContentBase: true
   }
 };
